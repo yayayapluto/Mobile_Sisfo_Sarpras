@@ -1,0 +1,2 @@
+D:/farras/SMK_Taruna_Bhakti/Projek/AAS_Sisfo_Sarpras/Mobile_Sisfo_Sarpras/android/app/.cxx/Debug/vs6v623u/armeabi-v7a/CMakeFiles/edit_cache.dir
+D:/farras/SMK_Taruna_Bhakti/Projek/AAS_Sisfo_Sarpras/Mobile_Sisfo_Sarpras/android/app/.cxx/Debug/vs6v623u/armeabi-v7a/CMakeFiles/rebuild_cache.dir
