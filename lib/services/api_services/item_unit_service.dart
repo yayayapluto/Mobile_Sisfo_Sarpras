@@ -1,4 +1,3 @@
-import 'package:dio/dio.dart';
 import '../../models/item_unit.dart';
 import '../dio_service.dart';
 

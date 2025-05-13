@@ -6,29 +6,21 @@ import '../screens/warehouse/warehouse_list_screen.dart';
 import '../screens/category/category_list_screen.dart';
 import '../screens/item/item_list_screen.dart';
 import '../screens/item/item_detail_screen.dart';
-import '../screens/request/borrow_request_screen.dart';
-import '../screens/request/return_request_screen.dart';
 import '../screens/request/request_history_screen.dart';
 import '../screens/profile/profile_screen.dart';
 
 final router = GoRouter(
   initialLocation: '/',
   routes: [
-    
     GoRoute(
-      path: '/',
-      name: 'login',
-      builder: (context, state) => const LoginScreen()
-    ),
-
-    
+        path: '/',
+        name: 'login',
+        builder: (context, state) => const LoginScreen()),
     GoRoute(
       path: '/home',
       name: 'home',
       builder: (context, state) => const HomeScreen(),
     ),
-
-    
     GoRoute(
       path: '/warehouses',
       name: 'warehouses',
@@ -47,8 +39,6 @@ final router = GoRouter(
         ),
       ],
     ),
-
-    
     GoRoute(
       path: '/categories',
       name: 'categories',
@@ -67,8 +57,6 @@ final router = GoRouter(
         ),
       ],
     ),
-
-    
     GoRoute(
       path: '/items',
       name: 'items',
@@ -86,48 +74,15 @@ final router = GoRouter(
         ),
       ],
     ),
-
-    
-    GoRoute(
-      path: '/borrow-request',
-      name: 'borrow-request',
-      builder: (context, state) {
-        final Map<String, dynamic>? extra = state.extra as Map<String, dynamic>?;
-        return BorrowRequestScreen(
-          itemId: extra?['itemId'] as String?,
-          unitId: extra?['unitId'] as String?,
-        );
-      },
-    ),
-    GoRoute(
-      path: '/return-request',
-      name: 'return-request',
-      builder: (context, state) {
-        final Map<String, dynamic>? extra = state.extra as Map<String, dynamic>?;
-        return ReturnRequestScreen(
-          borrowId: extra?['borrowId'] as String?,
-        );
-      },
-    ),
     GoRoute(
       path: '/history',
       name: 'history',
       builder: (context, state) => const RequestHistoryScreen(),
     ),
-
-    
     GoRoute(
       path: '/profile',
       name: 'profile',
       builder: (context, state) => const ProfileScreen(),
     )
   ],
-
-  
-  redirect: (BuildContext context, GoRouterState state) {
-    if (state.matchedLocation != '/' && state.matchedLocation != '/home') {
-      
-    }
-    return null;
-  },
 );

@@ -27,7 +27,6 @@ class AuthState {
   });
 
   const AuthState.initial() : this();
-
   const AuthState.loading() : this(isLoading: true);
 
   const AuthState.authenticated({
@@ -68,8 +67,6 @@ class AuthNotifier extends StateNotifier<AuthState> {
 
     try {
       final result = await _authService.login(username, password);
-
-      print(result);
 
       if (result['success']) {
         state = AuthState.authenticated(

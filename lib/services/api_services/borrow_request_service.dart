@@ -27,7 +27,7 @@ class BorrowRequestService {
 
       return paginatedResponse.data;
     } catch (e) {
-      print('Error in BorrowRequestService.getAll: $e');
+      // Error in BorrowRequestService.getAll
       return [];
     }
   }

@@ -26,7 +26,7 @@ class ReturnRequestService {
 
       return paginatedResponse.data;
     } catch (e) {
-      print('Error in ReturnRequestService.getAll: $e');
+      // Error in ReturnRequestService.getAll
       return [];
     }
   }

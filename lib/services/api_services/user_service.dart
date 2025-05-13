@@ -26,7 +26,7 @@ class UserService {
 
       return paginatedResponse.data;
     } catch (e) {
-      print('Error in UserService.getAll: $e');
+      // Error in UserService.getAll
       return [];
     }
   }

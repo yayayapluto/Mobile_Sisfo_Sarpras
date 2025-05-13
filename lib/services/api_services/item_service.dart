@@ -1,6 +1,5 @@
 import 'package:dio/dio.dart';
 import '../../models/item.dart';
-import '../../models/paginate_response.dart';
 import '../dio_service.dart';
 
 ///// //// Service for handling Item API requests

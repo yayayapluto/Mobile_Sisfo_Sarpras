@@ -38,7 +38,7 @@ class AuthService {
         endpoint: '$_endpoint/logout',
       );
     } catch (e) {
-      print('Error during logout: $e');
+      // Error during logout
     }
     
     

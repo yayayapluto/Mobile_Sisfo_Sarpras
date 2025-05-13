@@ -1,6 +1,5 @@
 import 'package:dio/dio.dart';
 import '../../models/category.dart';
-import '../../models/paginate_response.dart';
 import '../dio_service.dart';
 
 class CategoryService {

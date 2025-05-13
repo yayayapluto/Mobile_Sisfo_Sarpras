@@ -298,9 +298,8 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                                     child: _buildRequestButton(
                                       title: 'Request\nPeminjaman',
                                       icon: Icons.outbox,
-                                      color: Colors.blue,
-                                      onTap: () =>
-                                          context.push('/borrow-request'),
+                                      color: Colors.grey,
+                                      onTap: () {},
                                     ),
                                   ),
                                   const SizedBox(width: 16),
@@ -308,9 +307,8 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                                     child: _buildRequestButton(
                                       title: 'Request\nPengembalian',
                                       icon: Icons.inbox,
-                                      color: Colors.blue.shade600,
-                                      onTap: () =>
-                                          context.push('/return-request'),
+                                      color: Colors.grey,
+                                      onTap: () {},
                                     ),
                                   ),
                                 ],

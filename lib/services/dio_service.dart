@@ -51,14 +51,11 @@ class DioService {
       ),
     );
     
-    
-    if (apiDebugMode) {
-      _dio.interceptors.add(LogInterceptor(
-        requestBody: true,
-        responseBody: true,
-        error: true,
-      ));
-    }
+    _dio.interceptors.add(LogInterceptor(
+      requestBody: true,
+      responseBody: true,
+      error: true,
+    ));
   }
 
   void setToken(String token) {

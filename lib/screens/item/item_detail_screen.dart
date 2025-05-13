@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:shimmer/shimmer.dart';
 import '../../services/dio_service.dart';
 import '../../services/api_services/item_service.dart';
 import '../../services/api_services/item_unit_service.dart';
@@ -147,8 +148,8 @@ class _ItemDetailScreenState extends State<ItemDetailScreen>
                                         CrossAxisAlignment.start,
                                     children: [
                                       Container(
-                                        width: double.infinity,
-                                        height: 200,
+                                        width: 120,
+                                        height: 120,
                                         decoration: BoxDecoration(
                                           color: Colors.white,
                                           borderRadius:
@@ -156,28 +157,7 @@ class _ItemDetailScreenState extends State<ItemDetailScreen>
                                           border: Border.all(
                                               color: Colors.blue.shade50),
                                         ),
-                                        child: _item!.imageUrl != 'placeholder'
-                                            ? ClipRRect(
-                                                borderRadius:
-                                                    BorderRadius.circular(8),
-                                                child: Image.network(
-                                                  _item!.imageUrl,
-                                                  fit: BoxFit.cover,
-                                                  errorBuilder: (context, error,
-                                                      stackTrace) {
-                                                    return Icon(
-                                                      _getIconForItem(_item!),
-                                                      size: 60,
-                                                      color: Colors.grey,
-                                                    );
-                                                  },
-                                                ),
-                                              )
-                                            : Icon(
-                                                _getIconForItem(_item!),
-                                                size: 60,
-                                                color: Colors.grey,
-                                              ),
+                                        child: _buildItemImage(_item!),
                                       ),
                                       const SizedBox(width: 16),
                                       Expanded(
@@ -265,13 +245,10 @@ class _ItemDetailScreenState extends State<ItemDetailScreen>
                                     SizedBox(
                                       width: double.infinity,
                                       child: ElevatedButton(
-                                        onPressed: () {
-                                          context.push('/borrow-request',
-                                              extra: {'itemId': widget.itemId});
-                                        },
+                                        onPressed: null,
                                         style: ElevatedButton.styleFrom(
-                                          backgroundColor: Colors.blue,
-                                          foregroundColor: Colors.white,
+                                          backgroundColor: Colors.grey[300],
+                                          foregroundColor: Colors.black54,
                                           padding: const EdgeInsets.symmetric(
                                               vertical: 12),
                                           shape: RoundedRectangleBorder(
@@ -279,7 +256,7 @@ class _ItemDetailScreenState extends State<ItemDetailScreen>
                                                 BorderRadius.circular(8),
                                           ),
                                         ),
-                                        child: const Text('Request Peminjaman'),
+                                        child: const Text('Request Peminjaman (Nonaktif)'),
                                       ),
                                     ),
                                 ],
@@ -323,6 +300,60 @@ class _ItemDetailScreenState extends State<ItemDetailScreen>
       if (name.contains('kursi')) return Icons.chair;
       return Icons.devices;
     }
+  }
+
+  Widget _buildItemImage(Item item) {
+    if (item.imageUrl == null || item.imageUrl.isEmpty || item.imageUrl == 'placeholder') {
+      print('Using fallback icon: image URL is empty or placeholder');
+      return Center(
+        child: Icon(
+          _getIconForItem(item),
+          size: 60,
+          color: Colors.grey,
+        ),
+      );
+    }
+    
+    print('Attempting to load image from URL: ${item.imageUrl}');
+    
+    return ClipRRect(
+      borderRadius: BorderRadius.circular(8),
+      child: Image.network(
+        item.imageUrl,
+        fit: BoxFit.cover,
+        loadingBuilder: (context, child, loadingProgress) {
+          if (loadingProgress == null) {
+            print('Image loaded successfully');
+            return child;
+          }
+          
+          print('Image loading: ${loadingProgress.expectedTotalBytes != null 
+              ? '${(loadingProgress.cumulativeBytesLoaded / loadingProgress.expectedTotalBytes! * 100).toStringAsFixed(1)}%'
+              : 'Unknown progress'}');
+              
+          return Shimmer.fromColors(
+            baseColor: Colors.grey[300]!,
+            highlightColor: Colors.grey[100]!,
+            child: Container(
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(8),
+              ),
+            ),
+          );
+        },
+        errorBuilder: (context, error, stackTrace) {
+          print('Error loading image: $error');
+          return Center(
+            child: Icon(
+              _getIconForItem(item),
+              size: 60,
+              color: Colors.grey,
+            ),
+          );
+        },
+      ),
+    );
   }
 
   Widget _buildUnitsTab() {
@@ -383,14 +414,7 @@ class _ItemDetailScreenState extends State<ItemDetailScreen>
                   ),
                 ),
               ),
-              onTap: isAvailable
-                  ? () {
-                      context.push('/borrow-request', extra: {
-                        'itemId': widget.itemId,
-                        'unitId': unit.id.toString(),
-                      });
-                    }
-                  : null,
+              onTap: null,
             ),
           );
         },
