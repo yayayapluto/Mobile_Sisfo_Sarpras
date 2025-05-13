@@ -1,0 +1,1058 @@
+{
+	"info": {
+		"_postman_id": "4149b9ad-62ab-43bf-8ed2-aa2aeb763e38",
+		"name": "Revisi API Sisfo Sarpras User",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "30402736"
+	},
+	"item": [
+		{
+			"name": "Items Copy",
+			"item": [
+				{
+					"name": "Index",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/items?with=category&search=johathan&type=non-consumable&sortBy=name&sortDir=asc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"items"
+							],
+							"query": [
+								{
+									"key": "with",
+									"value": "category"
+								},
+								{
+									"key": "search",
+									"value": "johathan"
+								},
+								{
+									"key": "type",
+									"value": "non-consumable"
+								},
+								{
+									"key": "sortBy",
+									"value": "name",
+									"description": "name,type,image_url,qr_image_url,category_id"
+								},
+								{
+									"key": "sortDir",
+									"value": "asc",
+									"description": "asc,desc"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "No Params",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8000/api/items",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"items"
+									],
+									"query": [
+										{
+											"key": "with",
+											"value": "category",
+											"disabled": true
+										},
+										{
+											"key": "search",
+											"value": "johathan",
+											"disabled": true
+										},
+										{
+											"key": "type",
+											"value": "non-consumable",
+											"disabled": true
+										},
+										{
+											"key": "sortBy",
+											"value": "name",
+											"description": "name,type,image_url,qr_image_url,category_id",
+											"disabled": true
+										},
+										{
+											"key": "sortDir",
+											"value": "asc",
+											"description": "asc,desc",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.4"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 13 May 2025 08:26:19 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Item list retrieved\",\n    \"content\": {\n        \"current_page\": 1,\n        \"data\": [\n            {\n                \"id\": 1,\n                \"name\": \"Ms. Helene Stehr\",\n                \"type\": \"non-consumable\",\n                \"description\": \"Minima ut dolores rerum nobis qui quaerat. Tenetur commodi voluptas quia qui tempore ad perspiciatis. Tempora voluptatibus ut distinctio amet nobis.\",\n                \"image_url\": \"http://192.168.1.13:8000/storage/item-images/Ms.-Helene-Stehr-upload-2025-05-12.jpg\",\n                \"category_id\": 1,\n                \"created_at\": \"2025-05-12T12:07:12.000000Z\",\n                \"updated_at\": \"2025-05-12T12:52:15.000000Z\",\n                \"deleted_at\": null\n            },\n            {\n                \"id\": 2,\n                \"name\": \"Tad Nienow\",\n                \"type\": \"consumable\",\n                \"description\": \"Expedita culpa est ullam dolores quaerat. Dolorum iure reiciendis et id quo molestias repudiandae. Aliquam alias sit deserunt rem aliquam.\",\n                \"image_url\": \"placeholder\",\n                \"category_id\": 2,\n                \"created_at\": \"2025-05-12T12:07:12.000000Z\",\n                \"updated_at\": \"2025-05-12T12:07:12.000000Z\",\n                \"deleted_at\": null\n            },\n            {\n                \"id\": 3,\n                \"name\": \"Sasha Trantow\",\n                \"type\": \"consumable\",\n                \"description\": \"Et quos molestiae accusantium ipsum aliquam dolor itaque velit. Error maxime sit vero ad veniam ullam. Magni sit architecto nobis ipsa sit.\",\n                \"image_url\": \"placeholder\",\n                \"category_id\": 1,\n                \"created_at\": \"2025-05-12T12:07:12.000000Z\",\n                \"updated_at\": \"2025-05-12T12:07:12.000000Z\",\n                \"deleted_at\": null\n            },\n            {\n                \"id\": 4,\n                \"name\": \"Abbigail Koepp\",\n                \"type\": \"consumable\",\n                \"description\": \"Voluptatem distinctio aut accusantium ipsam rem enim. Aliquid totam eum id labore nesciunt. Molestiae similique sint qui quae voluptas iure consequatur. Voluptatem sed sunt adipisci quas cupiditate ea.\",\n                \"image_url\": \"placeholder\",\n                \"category_id\": 2,\n                \"created_at\": \"2025-05-12T12:07:12.000000Z\",\n                \"updated_at\": \"2025-05-12T12:07:12.000000Z\",\n                \"deleted_at\": null\n            },\n            {\n                \"id\": 5,\n                \"name\": \"Haylie Becker\",\n                \"type\": \"consumable\",\n                \"description\": \"Voluptas est neque aliquam ea rerum reiciendis. Quo modi quia sed sequi. Consectetur sed repellendus optio ut. Molestiae odio ratione sequi ut eum.\",\n                \"image_url\": \"placeholder\",\n                \"category_id\": 2,\n                \"created_at\": \"2025-05-12T12:07:12.000000Z\",\n                \"updated_at\": \"2025-05-12T12:07:12.000000Z\",\n                \"deleted_at\": null\n            },\n            {\n                \"id\": 6,\n                \"name\": \"anjay\",\n                \"type\": \"consumable\",\n                \"description\": \"-\",\n                \"image_url\": \"http://192.168.1.13:8000/storage/item-images/anjay-upload-2025-05-12.jpg\",\n                \"category_id\": 2,\n                \"created_at\": \"2025-05-12T12:53:17.000000Z\",\n                \"updated_at\": \"2025-05-12T12:53:17.000000Z\",\n                \"deleted_at\": null\n            }\n        ],\n        \"first_page_url\": \"http://localhost:8000/api/items?page=1\",\n        \"from\": 1,\n        \"next_page_url\": null,\n        \"path\": \"http://localhost:8000/api/items\",\n        \"per_page\": 10,\n        \"prev_page_url\": null,\n        \"to\": 6\n    },\n    \"error\": null\n}"
+						},
+						{
+							"name": "With Params",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8000/api/items?with=category&search=johathan&type=non-consumable&sortBy=name&sortDir=asc",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"items"
+									],
+									"query": [
+										{
+											"key": "with",
+											"value": "category"
+										},
+										{
+											"key": "search",
+											"value": "johathan"
+										},
+										{
+											"key": "type",
+											"value": "non-consumable"
+										},
+										{
+											"key": "sortBy",
+											"value": "name",
+											"description": "name,type,image_url,qr_image_url,category_id"
+										},
+										{
+											"key": "sortDir",
+											"value": "asc",
+											"description": "asc,desc"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.4"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 13 May 2025 08:26:31 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Item list retrieved\",\n    \"content\": {\n        \"current_page\": 1,\n        \"data\": [],\n        \"first_page_url\": \"http://localhost:8000/api/items?page=1\",\n        \"from\": null,\n        \"next_page_url\": null,\n        \"path\": \"http://localhost:8000/api/items\",\n        \"per_page\": 10,\n        \"prev_page_url\": null,\n        \"to\": null\n    },\n    \"error\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "Show",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8000/api/items/1"
+					},
+					"response": [
+						{
+							"name": "Show",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": "http://localhost:8000/api/items/1"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.4"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 13 May 2025 08:26:47 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Item found\",\n    \"content\": {\n        \"id\": 1,\n        \"name\": \"Ms. Helene Stehr\",\n        \"type\": \"non-consumable\",\n        \"description\": \"Minima ut dolores rerum nobis qui quaerat. Tenetur commodi voluptas quia qui tempore ad perspiciatis. Tempora voluptatibus ut distinctio amet nobis.\",\n        \"image_url\": \"http://192.168.1.13:8000/storage/item-images/Ms.-Helene-Stehr-upload-2025-05-12.jpg\",\n        \"category_id\": 1,\n        \"created_at\": \"2025-05-12T12:07:12.000000Z\",\n        \"updated_at\": \"2025-05-12T12:52:15.000000Z\",\n        \"deleted_at\": null,\n        \"category\": {\n            \"id\": 1,\n            \"slug\": \"category-cum-dolores-ut\",\n            \"name\": \"category cum dolores ut\",\n            \"description\": \"Corporis laudantium magnam suscipit harum atque. Magni officia accusamus rerum in est doloremque quidem. Laboriosam id consequatur debitis deleniti numquam.\",\n            \"created_at\": \"2025-05-12T12:07:12.000000Z\",\n            \"updated_at\": \"2025-05-12T12:07:12.000000Z\",\n            \"deleted_at\": null\n        },\n        \"item_units\": []\n    },\n    \"error\": null\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "ItemUnits Copy",
+			"item": [
+				{
+					"name": "Index",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/itemUnits?condition=eius&acquisition_source=Collier-Ziemann&acquisition_date=2022-05-06&status=unknown&quantity=4&item_id=3&warehouse_id=2&with=item,warehouse",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"itemUnits"
+							],
+							"query": [
+								{
+									"key": "condition",
+									"value": "eius"
+								},
+								{
+									"key": "acquisition_source",
+									"value": "Collier-Ziemann"
+								},
+								{
+									"key": "acquisition_date",
+									"value": "2022-05-06"
+								},
+								{
+									"key": "status",
+									"value": "unknown"
+								},
+								{
+									"key": "quantity",
+									"value": "4"
+								},
+								{
+									"key": "item_id",
+									"value": "3"
+								},
+								{
+									"key": "warehouse_id",
+									"value": "2"
+								},
+								{
+									"key": "with",
+									"value": "item,warehouse"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "No Params",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8000/api/itemUnits",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"itemUnits"
+									],
+									"query": [
+										{
+											"key": "condition",
+											"value": "eius",
+											"disabled": true
+										},
+										{
+											"key": "acquisition_source",
+											"value": "Collier-Ziemann",
+											"disabled": true
+										},
+										{
+											"key": "acquisition_date",
+											"value": "2022-05-06",
+											"disabled": true
+										},
+										{
+											"key": "status",
+											"value": "unknown",
+											"disabled": true
+										},
+										{
+											"key": "quantity",
+											"value": "4",
+											"disabled": true
+										},
+										{
+											"key": "item_id",
+											"value": "3",
+											"disabled": true
+										},
+										{
+											"key": "warehouse_id",
+											"value": "2",
+											"disabled": true
+										},
+										{
+											"key": "with",
+											"value": "item,warehouse",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.4"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 13 May 2025 08:28:43 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Item unit list retrieved\",\n    \"content\": {\n        \"current_page\": 1,\n        \"data\": [\n            {\n                \"id\": 1,\n                \"sku\": \"Ms.-Corene-Wuckert-unit-quia-id-similique-sequi-saepe-aut\",\n                \"condition\": \"dolor\",\n                \"notes\": \"Corrupti molestiae sequi labore et est et. Minus fuga quas et distinctio est expedita neque. Rerum iste molestiae ut ad in sint eaque.\",\n                \"acquisition_source\": \"Mertz and Sons\",\n                \"acquisition_date\": \"2016-11-08\",\n                \"acquisition_notes\": \"Commodi tempora ratione dolorem qui ipsum sed. Ut sed sit aut et sint ratione. Facilis nulla vel magni et explicabo. Nihil omnis fugit omnis totam possimus quis itaque voluptatibus.\",\n                \"status\": \"available\",\n                \"quantity\": 1,\n                \"qr_image_url\": \"http://localhost/storage/qr-images/Ms.-Corene-Wuckert-unit-quia-id-similique-sequi-saepe-aut.png\",\n                \"item_id\": 5,\n                \"warehouse_id\": 1,\n                \"created_at\": \"2025-05-13T08:28:18.000000Z\",\n                \"updated_at\": \"2025-05-13T08:28:18.000000Z\",\n                \"deleted_at\": null\n            },\n            {\n                \"id\": 2,\n                \"sku\": \"Mr.-Mauricio-Walter-PhD-unit-nobis-porro-quis-amet-sunt-enim\",\n                \"condition\": \"assumenda\",\n                \"notes\": \"Est alias et explicabo voluptatum quia repellendus vel. Beatae quis accusamus ut. Dolores magnam adipisci ut enim. Qui non natus quo qui ea et molestiae recusandae. Ut sed dicta totam.\",\n                \"acquisition_source\": \"VonRueden-Cummerata\",\n                \"acquisition_date\": \"1986-07-29\",\n                \"acquisition_notes\": \"Consequatur aut nobis cum et. At harum cupiditate est dolorem quod quibusdam labore. Ea veritatis ad est hic. Minus minus facere vel deleniti ut ullam quo.\",\n                \"status\": \"available\",\n                \"quantity\": 1,\n                \"qr_image_url\": \"http://localhost/storage/qr-images/Mr.-Mauricio-Walter-PhD-unit-nobis-porro-quis-amet-sunt-enim.png\",\n                \"item_id\": 1,\n                \"warehouse_id\": 1,\n                \"created_at\": \"2025-05-13T08:28:18.000000Z\",\n                \"updated_at\": \"2025-05-13T08:28:18.000000Z\",\n                \"deleted_at\": null\n            },\n            {\n                \"id\": 3,\n                \"sku\": \"Karolann-Kautzer-unit-excepturi-ipsa-magnam-repellat-eos-deserunt-sequi\",\n                \"condition\": \"alias\",\n                \"notes\": \"Est facilis autem repellat aliquam eligendi. Dicta accusantium et ea aspernatur at. Nulla mollitia ut repudiandae accusamus omnis rem eius.\",\n                \"acquisition_source\": \"Pfeffer, Lynch and Becker\",\n                \"acquisition_date\": \"1993-09-27\",\n                \"acquisition_notes\": \"Ad qui modi quos voluptatibus enim at. Possimus odit quo eaque fuga earum delectus nihil. Officiis aut ea libero quia qui.\",\n                \"status\": \"available\",\n                \"quantity\": 2,\n                \"qr_image_url\": \"http://localhost/storage/qr-images/Karolann-Kautzer-unit-excepturi-ipsa-magnam-repellat-eos-deserunt-sequi.png\",\n                \"item_id\": 2,\n                \"warehouse_id\": 2,\n                \"created_at\": \"2025-05-13T08:28:18.000000Z\",\n                \"updated_at\": \"2025-05-13T08:28:18.000000Z\",\n                \"deleted_at\": null\n            },\n            {\n                \"id\": 4,\n                \"sku\": \"Karolann-Kautzer-unit-qui-quam-velit-cumque\",\n                \"condition\": \"porro\",\n                \"notes\": \"Et quo laudantium fugiat nihil exercitationem eligendi. Eos dolore qui earum necessitatibus et commodi. Unde eius assumenda perspiciatis. Quos animi ipsam sed minus ipsum voluptatum.\",\n                \"acquisition_source\": \"Hansen, Miller and Collier\",\n                \"acquisition_date\": \"1976-05-12\",\n                \"acquisition_notes\": \"Tenetur et recusandae quia possimus delectus qui molestiae. Magni magni quam atque repellat. Illo et quia temporibus consequatur rerum quam sint.\",\n                \"status\": \"available\",\n                \"quantity\": 1,\n                \"qr_image_url\": \"http://localhost/storage/qr-images/Karolann-Kautzer-unit-qui-quam-velit-cumque.png\",\n                \"item_id\": 2,\n                \"warehouse_id\": 2,\n                \"created_at\": \"2025-05-13T08:28:18.000000Z\",\n                \"updated_at\": \"2025-05-13T08:28:18.000000Z\",\n                \"deleted_at\": null\n            },\n            {\n                \"id\": 5,\n                \"sku\": \"Hans-Veum-unit-labore-ratione-ullam-aut-dolore-minus-eius\",\n                \"condition\": \"ut\",\n                \"notes\": \"Sed perferendis nobis ab. Consequatur voluptas iste nam minus ipsa quaerat minus quia.\",\n                \"acquisition_source\": \"Bode, Johnston and Wiza\",\n                \"acquisition_date\": \"2023-08-05\",\n                \"acquisition_notes\": \"Fugiat et beatae quam numquam. Dolor rerum voluptates omnis perferendis culpa. Rem impedit quisquam et recusandae ut quibusdam. Esse blanditiis aperiam officiis ea et autem.\",\n                \"status\": \"available\",\n                \"quantity\": 1,\n                \"qr_image_url\": \"http://localhost/storage/qr-images/Hans-Veum-unit-labore-ratione-ullam-aut-dolore-minus-eius.png\",\n                \"item_id\": 4,\n                \"warehouse_id\": 1,\n                \"created_at\": \"2025-05-13T08:28:18.000000Z\",\n                \"updated_at\": \"2025-05-13T08:28:18.000000Z\",\n                \"deleted_at\": null\n            },\n            {\n                \"id\": 6,\n                \"sku\": \"Hans-Veum-unit-pariatur-eum-et-laborum-et-repellat-cum-facilis\",\n                \"condition\": \"eius\",\n                \"notes\": \"Optio pariatur qui possimus rem architecto. Aut ipsa nobis qui consequatur eum. Minima ad dolor vel ut molestiae quis.\",\n                \"acquisition_source\": \"Larson and Sons\",\n                \"acquisition_date\": \"1971-03-16\",\n                \"acquisition_notes\": \"Nisi voluptatem culpa rerum odit quidem nostrum. Qui aut nesciunt aliquid excepturi deserunt eum facilis. Consequatur delectus sequi enim repellat voluptatem. Quasi ea quos cum.\",\n                \"status\": \"available\",\n                \"quantity\": 1,\n                \"qr_image_url\": \"http://localhost/storage/qr-images/Hans-Veum-unit-pariatur-eum-et-laborum-et-repellat-cum-facilis.png\",\n                \"item_id\": 4,\n                \"warehouse_id\": 1,\n                \"created_at\": \"2025-05-13T08:28:18.000000Z\",\n                \"updated_at\": \"2025-05-13T08:28:18.000000Z\",\n                \"deleted_at\": null\n            },\n            {\n                \"id\": 7,\n                \"sku\": \"Mr.-Mauricio-Walter-PhD-unit-beatae-velit-unde-voluptas-ratione\",\n                \"condition\": \"iusto\",\n                \"notes\": \"Et eveniet quia nobis. Et eum in dolores dolores consequatur. Temporibus atque cum aliquid rem aliquam. Hic beatae ex aut et. Ut dolor molestiae qui delectus molestiae voluptatibus.\",\n                \"acquisition_source\": \"Legros, VonRueden and Moore\",\n                \"acquisition_date\": \"1973-08-25\",\n                \"acquisition_notes\": \"Et distinctio qui iusto iure totam. Non aut omnis ex quis et ipsum tempora. Et est necessitatibus et voluptas commodi officia nihil.\",\n                \"status\": \"available\",\n                \"quantity\": 1,\n                \"qr_image_url\": \"http://localhost/storage/qr-images/Mr.-Mauricio-Walter-PhD-unit-beatae-velit-unde-voluptas-ratione.png\",\n                \"item_id\": 1,\n                \"warehouse_id\": 2,\n                \"created_at\": \"2025-05-13T08:28:18.000000Z\",\n                \"updated_at\": \"2025-05-13T08:28:18.000000Z\",\n                \"deleted_at\": null\n            },\n            {\n                \"id\": 8,\n                \"sku\": \"Mr.-Mauricio-Walter-PhD-unit-inventore-rerum-veritatis-et-dolorem-et-nesciunt\",\n                \"condition\": \"perferendis\",\n                \"notes\": \"Vel qui suscipit aut rerum dicta hic. Id et iusto ea. Fugiat ea ut illum in vel ut. Quam voluptate deserunt impedit voluptatem. Eaque laboriosam soluta nam iste quas nesciunt eaque.\",\n                \"acquisition_source\": \"Abbott, Prosacco and Hyatt\",\n                \"acquisition_date\": \"1991-02-18\",\n                \"acquisition_notes\": \"Non necessitatibus ut velit consequatur provident similique sed. Cupiditate modi et omnis nisi totam. Aliquam sapiente a sed repudiandae velit iusto.\",\n                \"status\": \"available\",\n                \"quantity\": 1,\n                \"qr_image_url\": \"http://localhost/storage/qr-images/Mr.-Mauricio-Walter-PhD-unit-inventore-rerum-veritatis-et-dolorem-et-nesciunt.png\",\n                \"item_id\": 1,\n                \"warehouse_id\": 2,\n                \"created_at\": \"2025-05-13T08:28:18.000000Z\",\n                \"updated_at\": \"2025-05-13T08:28:18.000000Z\",\n                \"deleted_at\": null\n            },\n            {\n                \"id\": 9,\n                \"sku\": \"Leatha-Greenfelder-unit-laborum-quia-at-porro-asperiores-quo-enim\",\n                \"condition\": \"est\",\n                \"notes\": \"Eos molestias in dolores. Distinctio ut natus consequatur quidem similique. Perspiciatis porro omnis ad omnis sint in dolor quia. Sunt natus dicta quia et eius.\",\n                \"acquisition_source\": \"Rempel Group\",\n                \"acquisition_date\": \"2003-07-02\",\n                \"acquisition_notes\": \"Nam est temporibus ipsa eligendi occaecati tenetur accusantium eius. Debitis quidem numquam et dolor. Voluptatibus quia sed quia dolores consequatur expedita.\",\n                \"status\": \"available\",\n                \"quantity\": 4,\n                \"qr_image_url\": \"http://localhost/storage/qr-images/Leatha-Greenfelder-unit-laborum-quia-at-porro-asperiores-quo-enim.png\",\n                \"item_id\": 3,\n                \"warehouse_id\": 1,\n                \"created_at\": \"2025-05-13T08:28:18.000000Z\",\n                \"updated_at\": \"2025-05-13T08:28:18.000000Z\",\n                \"deleted_at\": null\n            },\n            {\n                \"id\": 10,\n                \"sku\": \"Hans-Veum-unit-iste-dolores-quis-molestiae-quia-ad-tenetur-omnis\",\n                \"condition\": \"aut\",\n                \"notes\": \"Possimus ut tempore consequatur vel similique vel. Quod nihil a rerum placeat et. Nesciunt odio nihil ea est mollitia. Sit cumque dignissimos facere vitae dolores nobis sit.\",\n                \"acquisition_source\": \"Hyatt Ltd\",\n                \"acquisition_date\": \"1971-11-07\",\n                \"acquisition_notes\": \"Et eius voluptatem alias voluptate est. Non dolorem sequi impedit magnam est.\",\n                \"status\": \"available\",\n                \"quantity\": 1,\n                \"qr_image_url\": \"http://localhost/storage/qr-images/Hans-Veum-unit-iste-dolores-quis-molestiae-quia-ad-tenetur-omnis.png\",\n                \"item_id\": 4,\n                \"warehouse_id\": 2,\n                \"created_at\": \"2025-05-13T08:28:18.000000Z\",\n                \"updated_at\": \"2025-05-13T08:28:18.000000Z\",\n                \"deleted_at\": null\n            }\n        ],\n        \"first_page_url\": \"http://localhost:8000/api/itemUnits?page=1\",\n        \"from\": 1,\n        \"next_page_url\": \"http://localhost:8000/api/itemUnits?page=2\",\n        \"path\": \"http://localhost:8000/api/itemUnits\",\n        \"per_page\": 10,\n        \"prev_page_url\": null,\n        \"to\": 10\n    },\n    \"error\": null\n}"
+						},
+						{
+							"name": "With Params",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8000/api/itemUnits?condition=eius&acquisition_source=Collier-Ziemann&acquisition_date=2022-05-06&status=unknown&quantity=4&item_id=3&warehouse_id=2&with=item,warehouse",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"itemUnits"
+									],
+									"query": [
+										{
+											"key": "condition",
+											"value": "eius"
+										},
+										{
+											"key": "acquisition_source",
+											"value": "Collier-Ziemann"
+										},
+										{
+											"key": "acquisition_date",
+											"value": "2022-05-06"
+										},
+										{
+											"key": "status",
+											"value": "unknown"
+										},
+										{
+											"key": "quantity",
+											"value": "4"
+										},
+										{
+											"key": "item_id",
+											"value": "3"
+										},
+										{
+											"key": "warehouse_id",
+											"value": "2"
+										},
+										{
+											"key": "with",
+											"value": "item,warehouse"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.4"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 13 May 2025 08:29:04 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Item unit list retrieved\",\n    \"content\": {\n        \"current_page\": 1,\n        \"data\": [],\n        \"first_page_url\": \"http://localhost:8000/api/itemUnits?page=1\",\n        \"from\": null,\n        \"next_page_url\": null,\n        \"path\": \"http://localhost:8000/api/itemUnits\",\n        \"per_page\": 10,\n        \"prev_page_url\": null,\n        \"to\": null\n    },\n    \"error\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "Show",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"condition\": \"baru\",\r\n    \"acquisition_date\": \"2025-5-1\",\r\n    \"acquisition_source\": \"dikasih orang\",\r\n    \"quantity\": 100,\r\n    \"item\": 1,\r\n    \"warehouse\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8000/api/itemUnits/Ms.-Corene-Wuckert-unit-quia-id-similique-sequi-saepe-aut"
+					},
+					"response": [
+						{
+							"name": "Show",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"condition\": \"baru\",\r\n    \"acquisition_date\": \"2025-5-1\",\r\n    \"acquisition_source\": \"dikasih orang\",\r\n    \"quantity\": 100,\r\n    \"item\": 1,\r\n    \"warehouse\": 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:8000/api/itemUnits/Ms.-Corene-Wuckert-unit-quia-id-similique-sequi-saepe-aut"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.4"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 13 May 2025 08:29:32 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Item unit found\",\n    \"content\": {\n        \"id\": 1,\n        \"sku\": \"Ms.-Corene-Wuckert-unit-quia-id-similique-sequi-saepe-aut\",\n        \"condition\": \"dolor\",\n        \"notes\": \"Corrupti molestiae sequi labore et est et. Minus fuga quas et distinctio est expedita neque. Rerum iste molestiae ut ad in sint eaque.\",\n        \"acquisition_source\": \"Mertz and Sons\",\n        \"acquisition_date\": \"2016-11-08\",\n        \"acquisition_notes\": \"Commodi tempora ratione dolorem qui ipsum sed. Ut sed sit aut et sint ratione. Facilis nulla vel magni et explicabo. Nihil omnis fugit omnis totam possimus quis itaque voluptatibus.\",\n        \"status\": \"available\",\n        \"quantity\": 1,\n        \"qr_image_url\": \"http://localhost/storage/qr-images/Ms.-Corene-Wuckert-unit-quia-id-similique-sequi-saepe-aut.png\",\n        \"item_id\": 5,\n        \"warehouse_id\": 1,\n        \"created_at\": \"2025-05-13T08:28:18.000000Z\",\n        \"updated_at\": \"2025-05-13T08:28:18.000000Z\",\n        \"deleted_at\": null,\n        \"item\": {\n            \"id\": 5,\n            \"name\": \"Ms. Corene Wuckert\",\n            \"type\": \"non-consumable\",\n            \"description\": \"Et est ut nisi minus voluptas doloribus provident. Sit non magni ex nostrum amet tempora.\",\n            \"image_url\": \"placeholder\",\n            \"category_id\": 2,\n            \"created_at\": \"2025-05-13T08:28:15.000000Z\",\n            \"updated_at\": \"2025-05-13T08:28:15.000000Z\",\n            \"deleted_at\": null,\n            \"category\": {\n                \"id\": 2,\n                \"slug\": \"category-et\",\n                \"name\": \"category et\",\n                \"description\": \"Necessitatibus vel incidunt aliquam ut possimus dolore. Rerum quas iusto placeat et cum repellendus dolor. Qui dicta quia aliquid et et. Porro ipsa earum omnis occaecati vel. Mollitia ducimus explicabo officiis iure.\",\n                \"created_at\": \"2025-05-13T08:28:15.000000Z\",\n                \"updated_at\": \"2025-05-13T08:28:15.000000Z\",\n                \"deleted_at\": null\n            }\n        },\n        \"warehouse\": {\n            \"id\": 1,\n            \"name\": \"Warehouse quaerat reiciendis eum\",\n            \"location\": \"5458 Runolfsson Unions\\nHillshire, MT 72565\",\n            \"capacity\": 386,\n            \"created_at\": \"2025-05-13T08:28:15.000000Z\",\n            \"updated_at\": \"2025-05-13T08:28:15.000000Z\",\n            \"deleted_at\": null\n        }\n    },\n    \"error\": null\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Categories",
+			"item": [
+				{
+					"name": "Index",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/categories?sortBy=name&sortDir=asc&with=items",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"categories"
+							],
+							"query": [
+								{
+									"key": "sortBy",
+									"value": "name",
+									"description": "name, created_at"
+								},
+								{
+									"key": "sortDir",
+									"value": "asc",
+									"description": "asc, desc"
+								},
+								{
+									"key": "with",
+									"value": "items"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "No Params",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8000/api/categories",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"categories"
+									],
+									"query": [
+										{
+											"key": "sortBy",
+											"value": "name",
+											"description": "name, created_at",
+											"disabled": true
+										},
+										{
+											"key": "sortDir",
+											"value": "asc",
+											"description": "asc, desc",
+											"disabled": true
+										},
+										{
+											"key": "with",
+											"value": "items",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.4"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 13 May 2025 08:23:25 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Category list retrieved\",\n    \"content\": {\n        \"current_page\": 1,\n        \"data\": [\n            {\n                \"id\": 1,\n                \"slug\": \"category-cum-dolores-ut\",\n                \"name\": \"category cum dolores ut\",\n                \"description\": \"Corporis laudantium magnam suscipit harum atque. Magni officia accusamus rerum in est doloremque quidem. Laboriosam id consequatur debitis deleniti numquam.\",\n                \"created_at\": \"2025-05-12T12:07:12.000000Z\",\n                \"updated_at\": \"2025-05-12T12:07:12.000000Z\",\n                \"deleted_at\": null\n            },\n            {\n                \"id\": 2,\n                \"slug\": \"category-quam\",\n                \"name\": \"category quam\",\n                \"description\": \"Asperiores quia non ea assumenda. Ducimus perspiciatis minima nihil ullam. Fugiat id impedit sit delectus.\",\n                \"created_at\": \"2025-05-12T12:07:12.000000Z\",\n                \"updated_at\": \"2025-05-12T12:07:12.000000Z\",\n                \"deleted_at\": null\n            },\n            {\n                \"id\": 3,\n                \"slug\": \"category-optio-quam-repudiandae\",\n                \"name\": \"category optio quam repudiandae\",\n                \"description\": \"Maiores beatae dolor sequi quos quidem. Quia corporis consectetur quia. Quos a qui voluptas ut.\",\n                \"created_at\": \"2025-05-12T12:07:12.000000Z\",\n                \"updated_at\": \"2025-05-12T12:07:12.000000Z\",\n                \"deleted_at\": null\n            }\n        ],\n        \"first_page_url\": \"http://localhost:8000/api/categories?page=1\",\n        \"from\": 1,\n        \"next_page_url\": null,\n        \"path\": \"http://localhost:8000/api/categories\",\n        \"per_page\": 10,\n        \"prev_page_url\": null,\n        \"to\": 3\n    },\n    \"error\": null\n}"
+						},
+						{
+							"name": "With Params",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8000/api/categories?sortBy=name&sortDir=asc&with=items",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"categories"
+									],
+									"query": [
+										{
+											"key": "sortBy",
+											"value": "name",
+											"description": "name, created_at"
+										},
+										{
+											"key": "sortDir",
+											"value": "asc",
+											"description": "asc, desc"
+										},
+										{
+											"key": "with",
+											"value": "items"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.4"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 13 May 2025 08:25:11 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Category list retrieved\",\n    \"content\": {\n        \"current_page\": 1,\n        \"data\": [\n            {\n                \"id\": 1,\n                \"slug\": \"category-cum-dolores-ut\",\n                \"name\": \"category cum dolores ut\",\n                \"description\": \"Corporis laudantium magnam suscipit harum atque. Magni officia accusamus rerum in est doloremque quidem. Laboriosam id consequatur debitis deleniti numquam.\",\n                \"created_at\": \"2025-05-12T12:07:12.000000Z\",\n                \"updated_at\": \"2025-05-12T12:07:12.000000Z\",\n                \"deleted_at\": null,\n                \"items\": [\n                    {\n                        \"id\": 1,\n                        \"name\": \"Ms. Helene Stehr\",\n                        \"type\": \"non-consumable\",\n                        \"description\": \"Minima ut dolores rerum nobis qui quaerat. Tenetur commodi voluptas quia qui tempore ad perspiciatis. Tempora voluptatibus ut distinctio amet nobis.\",\n                        \"image_url\": \"http://192.168.1.13:8000/storage/item-images/Ms.-Helene-Stehr-upload-2025-05-12.jpg\",\n                        \"category_id\": 1,\n                        \"created_at\": \"2025-05-12T12:07:12.000000Z\",\n                        \"updated_at\": \"2025-05-12T12:52:15.000000Z\",\n                        \"deleted_at\": null\n                    },\n                    {\n                        \"id\": 3,\n                        \"name\": \"Sasha Trantow\",\n                        \"type\": \"consumable\",\n                        \"description\": \"Et quos molestiae accusantium ipsum aliquam dolor itaque velit. Error maxime sit vero ad veniam ullam. Magni sit architecto nobis ipsa sit.\",\n                        \"image_url\": \"placeholder\",\n                        \"category_id\": 1,\n                        \"created_at\": \"2025-05-12T12:07:12.000000Z\",\n                        \"updated_at\": \"2025-05-12T12:07:12.000000Z\",\n                        \"deleted_at\": null\n                    }\n                ]\n            },\n            {\n                \"id\": 3,\n                \"slug\": \"category-optio-quam-repudiandae\",\n                \"name\": \"category optio quam repudiandae\",\n                \"description\": \"Maiores beatae dolor sequi quos quidem. Quia corporis consectetur quia. Quos a qui voluptas ut.\",\n                \"created_at\": \"2025-05-12T12:07:12.000000Z\",\n                \"updated_at\": \"2025-05-12T12:07:12.000000Z\",\n                \"deleted_at\": null,\n                \"items\": []\n            },\n            {\n                \"id\": 2,\n                \"slug\": \"category-quam\",\n                \"name\": \"category quam\",\n                \"description\": \"Asperiores quia non ea assumenda. Ducimus perspiciatis minima nihil ullam. Fugiat id impedit sit delectus.\",\n                \"created_at\": \"2025-05-12T12:07:12.000000Z\",\n                \"updated_at\": \"2025-05-12T12:07:12.000000Z\",\n                \"deleted_at\": null,\n                \"items\": [\n                    {\n                        \"id\": 2,\n                        \"name\": \"Tad Nienow\",\n                        \"type\": \"consumable\",\n                        \"description\": \"Expedita culpa est ullam dolores quaerat. Dolorum iure reiciendis et id quo molestias repudiandae. Aliquam alias sit deserunt rem aliquam.\",\n                        \"image_url\": \"placeholder\",\n                        \"category_id\": 2,\n                        \"created_at\": \"2025-05-12T12:07:12.000000Z\",\n                        \"updated_at\": \"2025-05-12T12:07:12.000000Z\",\n                        \"deleted_at\": null\n                    },\n                    {\n                        \"id\": 4,\n                        \"name\": \"Abbigail Koepp\",\n                        \"type\": \"consumable\",\n                        \"description\": \"Voluptatem distinctio aut accusantium ipsam rem enim. Aliquid totam eum id labore nesciunt. Molestiae similique sint qui quae voluptas iure consequatur. Voluptatem sed sunt adipisci quas cupiditate ea.\",\n                        \"image_url\": \"placeholder\",\n                        \"category_id\": 2,\n                        \"created_at\": \"2025-05-12T12:07:12.000000Z\",\n                        \"updated_at\": \"2025-05-12T12:07:12.000000Z\",\n                        \"deleted_at\": null\n                    },\n                    {\n                        \"id\": 5,\n                        \"name\": \"Haylie Becker\",\n                        \"type\": \"consumable\",\n                        \"description\": \"Voluptas est neque aliquam ea rerum reiciendis. Quo modi quia sed sequi. Consectetur sed repellendus optio ut. Molestiae odio ratione sequi ut eum.\",\n                        \"image_url\": \"placeholder\",\n                        \"category_id\": 2,\n                        \"created_at\": \"2025-05-12T12:07:12.000000Z\",\n                        \"updated_at\": \"2025-05-12T12:07:12.000000Z\",\n                        \"deleted_at\": null\n                    },\n                    {\n                        \"id\": 6,\n                        \"name\": \"anjay\",\n                        \"type\": \"consumable\",\n                        \"description\": \"-\",\n                        \"image_url\": \"http://192.168.1.13:8000/storage/item-images/anjay-upload-2025-05-12.jpg\",\n                        \"category_id\": 2,\n                        \"created_at\": \"2025-05-12T12:53:17.000000Z\",\n                        \"updated_at\": \"2025-05-12T12:53:17.000000Z\",\n                        \"deleted_at\": null\n                    }\n                ]\n            }\n        ],\n        \"first_page_url\": \"http://localhost:8000/api/categories?page=1\",\n        \"from\": 1,\n        \"next_page_url\": null,\n        \"path\": \"http://localhost:8000/api/categories\",\n        \"per_page\": 10,\n        \"prev_page_url\": null,\n        \"to\": 3\n    },\n    \"error\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "Show",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8000/api/categories/category-cum-dolores-ut"
+					},
+					"response": [
+						{
+							"name": "Show",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": "http://localhost:8000/api/categories/category-cum-dolores-ut"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.4"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 13 May 2025 08:25:24 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Category found\",\n    \"content\": {\n        \"id\": 1,\n        \"slug\": \"category-cum-dolores-ut\",\n        \"name\": \"category cum dolores ut\",\n        \"description\": \"Corporis laudantium magnam suscipit harum atque. Magni officia accusamus rerum in est doloremque quidem. Laboriosam id consequatur debitis deleniti numquam.\",\n        \"created_at\": \"2025-05-12T12:07:12.000000Z\",\n        \"updated_at\": \"2025-05-12T12:07:12.000000Z\",\n        \"deleted_at\": null,\n        \"items\": [\n            {\n                \"id\": 1,\n                \"name\": \"Ms. Helene Stehr\",\n                \"type\": \"non-consumable\",\n                \"description\": \"Minima ut dolores rerum nobis qui quaerat. Tenetur commodi voluptas quia qui tempore ad perspiciatis. Tempora voluptatibus ut distinctio amet nobis.\",\n                \"image_url\": \"http://192.168.1.13:8000/storage/item-images/Ms.-Helene-Stehr-upload-2025-05-12.jpg\",\n                \"category_id\": 1,\n                \"created_at\": \"2025-05-12T12:07:12.000000Z\",\n                \"updated_at\": \"2025-05-12T12:52:15.000000Z\",\n                \"deleted_at\": null,\n                \"category\": {\n                    \"id\": 1,\n                    \"slug\": \"category-cum-dolores-ut\",\n                    \"name\": \"category cum dolores ut\",\n                    \"description\": \"Corporis laudantium magnam suscipit harum atque. Magni officia accusamus rerum in est doloremque quidem. Laboriosam id consequatur debitis deleniti numquam.\",\n                    \"created_at\": \"2025-05-12T12:07:12.000000Z\",\n                    \"updated_at\": \"2025-05-12T12:07:12.000000Z\",\n                    \"deleted_at\": null\n                }\n            },\n            {\n                \"id\": 3,\n                \"name\": \"Sasha Trantow\",\n                \"type\": \"consumable\",\n                \"description\": \"Et quos molestiae accusantium ipsum aliquam dolor itaque velit. Error maxime sit vero ad veniam ullam. Magni sit architecto nobis ipsa sit.\",\n                \"image_url\": \"placeholder\",\n                \"category_id\": 1,\n                \"created_at\": \"2025-05-12T12:07:12.000000Z\",\n                \"updated_at\": \"2025-05-12T12:07:12.000000Z\",\n                \"deleted_at\": null,\n                \"category\": {\n                    \"id\": 1,\n                    \"slug\": \"category-cum-dolores-ut\",\n                    \"name\": \"category cum dolores ut\",\n                    \"description\": \"Corporis laudantium magnam suscipit harum atque. Magni officia accusamus rerum in est doloremque quidem. Laboriosam id consequatur debitis deleniti numquam.\",\n                    \"created_at\": \"2025-05-12T12:07:12.000000Z\",\n                    \"updated_at\": \"2025-05-12T12:07:12.000000Z\",\n                    \"deleted_at\": null\n                }\n            }\n        ]\n    },\n    \"error\": null\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Warehouses",
+			"item": [
+				{
+					"name": "Index",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/warehouses",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"warehouses"
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": "30",
+									"disabled": true
+								},
+								{
+									"key": "name",
+									"value": "Warehouse quo asperiores enim",
+									"description": "gabisa multi field",
+									"disabled": true
+								},
+								{
+									"key": "sortBy",
+									"value": "name",
+									"description": "semua kolom",
+									"disabled": true
+								},
+								{
+									"key": "sortDir",
+									"value": "asc",
+									"description": "asc, desc",
+									"disabled": true
+								},
+								{
+									"key": "with",
+									"value": "itemUnits",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "No Params",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8000/api/warehouses",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"warehouses"
+									],
+									"query": [
+										{
+											"key": "search",
+											"value": "30",
+											"disabled": true
+										},
+										{
+											"key": "name",
+											"value": "Warehouse quo asperiores enim",
+											"description": "gabisa multi field",
+											"disabled": true
+										},
+										{
+											"key": "sortBy",
+											"value": "name",
+											"description": "semua kolom",
+											"disabled": true
+										},
+										{
+											"key": "sortDir",
+											"value": "asc",
+											"description": "asc, desc",
+											"disabled": true
+										},
+										{
+											"key": "with",
+											"value": "itemUnits",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.4"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 13 May 2025 08:24:22 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Warehouse list retrieved\",\n    \"content\": {\n        \"current_page\": 1,\n        \"data\": [\n            {\n                \"id\": 1,\n                \"name\": \"Warehouse eum quisquam autem\",\n                \"location\": \"845 Tillman Ranch\\nSouth Larry, TX 81105\",\n                \"capacity\": 310,\n                \"created_at\": \"2025-05-12T12:07:12.000000Z\",\n                \"updated_at\": \"2025-05-12T12:07:12.000000Z\",\n                \"deleted_at\": null\n            },\n            {\n                \"id\": 2,\n                \"name\": \"Warehouse rem maiores consectetur\",\n                \"location\": \"7801 Raheem Fords Suite 540\\nSouth Naomi, NJ 63986-8989\",\n                \"capacity\": 443,\n                \"created_at\": \"2025-05-12T12:07:12.000000Z\",\n                \"updated_at\": \"2025-05-12T12:07:12.000000Z\",\n                \"deleted_at\": null\n            }\n        ],\n        \"first_page_url\": \"http://localhost:8000/api/warehouses?page=1\",\n        \"from\": 1,\n        \"next_page_url\": null,\n        \"path\": \"http://localhost:8000/api/warehouses\",\n        \"per_page\": 10,\n        \"prev_page_url\": null,\n        \"to\": 2\n    },\n    \"error\": null\n}"
+						},
+						{
+							"name": "With Params",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8000/api/warehouses?search=30&name=Warehouse quo asperiores enim&sortBy=name&sortDir=asc&with=itemUnits",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"warehouses"
+									],
+									"query": [
+										{
+											"key": "search",
+											"value": "30"
+										},
+										{
+											"key": "name",
+											"value": "Warehouse quo asperiores enim",
+											"description": "gabisa multi field"
+										},
+										{
+											"key": "sortBy",
+											"value": "name",
+											"description": "semua kolom"
+										},
+										{
+											"key": "sortDir",
+											"value": "asc",
+											"description": "asc, desc"
+										},
+										{
+											"key": "with",
+											"value": "itemUnits"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.4"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 13 May 2025 08:25:45 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Warehouse list retrieved\",\n    \"content\": {\n        \"current_page\": 1,\n        \"data\": [],\n        \"first_page_url\": \"http://localhost:8000/api/warehouses?page=1\",\n        \"from\": null,\n        \"next_page_url\": null,\n        \"path\": \"http://localhost:8000/api/warehouses\",\n        \"per_page\": 10,\n        \"prev_page_url\": null,\n        \"to\": null\n    },\n    \"error\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "Show",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8000/api/warehouses/1"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
