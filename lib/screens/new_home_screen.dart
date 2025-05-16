@@ -66,7 +66,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
     final authState = ref.watch(authProvider);
     final userData = authState.userData;
     final userName =
-        userData != null ? '${userData['name'] ?? 'User'}' : 'User';
+        userData != null ? userData.username : 'User';
 
     return Scaffold(
       key: _scaffoldKey,
@@ -92,10 +92,6 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
           ],
         ),
         actions: [
-          IconButton(
-            icon: const Icon(Icons.notifications_outlined, color: Colors.black),
-            onPressed: () {},
-          ),
           IconButton(
             icon: const Icon(Icons.person_outline, color: Colors.black),
             onPressed: () => context.push('/profile'),
@@ -265,9 +261,8 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                                         {
                                           'title': 'Riwayat Request',
                                           'icon': Icons.history,
-                                          'color': Colors.blue.shade400,
-                                          'onTap': () =>
-                                              context.push('/history'),
+                                          'color': Colors.blue,
+                                          'onTap': () => context.push('/history'),
                                         },
                                       ];
 
@@ -297,9 +292,9 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                                   Expanded(
                                     child: _buildRequestButton(
                                       title: 'Request\nPeminjaman',
-                                      icon: Icons.outbox,
-                                      color: Colors.grey,
-                                      onTap: () {},
+                                      icon: Icons.send,
+                                      color: Colors.blue,
+                                      onTap: () => context.push('/borrow-request'),
                                     ),
                                   ),
                                   const SizedBox(width: 16),
@@ -307,8 +302,8 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                                     child: _buildRequestButton(
                                       title: 'Request\nPengembalian',
                                       icon: Icons.inbox,
-                                      color: Colors.grey,
-                                      onTap: () {},
+                                      color: Colors.blue,
+                                      onTap: () => context.push('/active-borrows'),
                                     ),
                                   ),
                                 ],
@@ -504,10 +499,13 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                           item.imageUrl,
                           fit: BoxFit.cover,
                           errorBuilder: (context, error, stackTrace) {
-                            return Icon(
-                              itemIcon,
-                              size: 40,
-                              color: Colors.grey[600],
+                            return Container(
+                              color: Colors.grey[300],
+                              alignment: Alignment.center,
+                              child: const Text(
+                                'Image cannot be loaded',
+                                style: TextStyle(fontSize: 10),
+                              ),
                             );
                           },
                         ),

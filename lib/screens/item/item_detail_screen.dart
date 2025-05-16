@@ -58,7 +58,7 @@ class _ItemDetailScreenState extends State<ItemDetailScreen>
       try {
         units = await _itemUnitService.getByItemId(item.id);
       } catch (e) {
-        print('Error fetching item units: $e');
+        //    print('Error fetching item units: $e');
       }
 
       if (mounted) {
@@ -304,7 +304,7 @@ class _ItemDetailScreenState extends State<ItemDetailScreen>
 
   Widget _buildItemImage(Item item) {
     if (item.imageUrl == null || item.imageUrl.isEmpty || item.imageUrl == 'placeholder') {
-      print('Using fallback icon: image URL is empty or placeholder');
+      // print('Using fallback icon: image URL is empty or placeholder');
       return Center(
         child: Icon(
           _getIconForItem(item),
@@ -314,7 +314,7 @@ class _ItemDetailScreenState extends State<ItemDetailScreen>
       );
     }
     
-    print('Attempting to load image from URL: ${item.imageUrl}');
+    // print('Attempting to load image from URL: ${item.imageUrl}');
     
     return ClipRRect(
       borderRadius: BorderRadius.circular(8),
@@ -323,13 +323,13 @@ class _ItemDetailScreenState extends State<ItemDetailScreen>
         fit: BoxFit.cover,
         loadingBuilder: (context, child, loadingProgress) {
           if (loadingProgress == null) {
-            print('Image loaded successfully');
+            // print('Image loaded successfully');
             return child;
           }
           
-          print('Image loading: ${loadingProgress.expectedTotalBytes != null 
-              ? '${(loadingProgress.cumulativeBytesLoaded / loadingProgress.expectedTotalBytes! * 100).toStringAsFixed(1)}%'
-              : 'Unknown progress'}');
+          // print('Image loading: ${loadingProgress.expectedTotalBytes != null 
+          //     ? '${(loadingProgress.cumulativeBytesLoaded / loadingProgress.expectedTotalBytes! * 100).toStringAsFixed(1)}%'
+          //     : 'Unknown progress'}');
               
           return Shimmer.fromColors(
             baseColor: Colors.grey[300]!,
@@ -343,7 +343,7 @@ class _ItemDetailScreenState extends State<ItemDetailScreen>
           );
         },
         errorBuilder: (context, error, stackTrace) {
-          print('Error loading image: $error');
+          // print('Error loading image: $error');
           return Center(
             child: Icon(
               _getIconForItem(item),

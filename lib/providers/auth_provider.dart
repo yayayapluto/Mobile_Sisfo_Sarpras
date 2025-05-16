@@ -1,3 +1,4 @@
+import 'package:mobile_sisfo_sarpras/models/user.dart';
 import 'package:riverpod/riverpod.dart';
 import '../services/dio_service.dart';
 import '../services/api_services/auth_service.dart';
@@ -15,7 +16,7 @@ class AuthState {
   final bool isAuthenticated;
   final bool isLoading;
   final String? error;
-  final Map<String, dynamic>? userData;
+  final User? userData;
   final String? token;
 
   const AuthState({
@@ -30,7 +31,7 @@ class AuthState {
   const AuthState.loading() : this(isLoading: true);
 
   const AuthState.authenticated({
-    required Map<String, dynamic> userData,
+    required User userData,
     required String token,
   }) : this(
           isAuthenticated: true,
@@ -44,7 +45,7 @@ class AuthState {
     bool? isAuthenticated,
     bool? isLoading,
     String? error,
-    Map<String, dynamic>? userData,
+    User? userData,
     String? token,
   }) {
     return AuthState(
@@ -59,8 +60,9 @@ class AuthState {
 
 class AuthNotifier extends StateNotifier<AuthState> {
   final AuthService _authService;
+  final DioService _dioService;
 
-  AuthNotifier(this._authService) : super(const AuthState.initial());
+  AuthNotifier(this._authService, this._dioService) : super(const AuthState.initial());
 
   Future<bool> login(String username, String password) async {
     state = const AuthState.loading();
@@ -69,10 +71,16 @@ class AuthNotifier extends StateNotifier<AuthState> {
       final result = await _authService.login(username, password);
 
       if (result['success']) {
+        final token = result['content']['token'];
+        
+        // Set the token in DioService for all future requests
+        _dioService.setToken(token);
+        
         state = AuthState.authenticated(
-          userData: result['content']['user'],
-          token: result['content']['token'],
+          userData: User.fromJson(result['content']['user']),
+          token: token,
         );
+
         return true;
       } else {
         state = AuthState.error(result['message']);
@@ -89,8 +97,10 @@ class AuthNotifier extends StateNotifier<AuthState> {
 
     try {
       await _authService.logout();
+      // Clear the token from DioService
+      _dioService.setToken('');
     } catch (e) {
-      print('Error during logout: $e');
+      // print('Error during logout: $e');
     }
 
     state = const AuthState.initial();
@@ -103,5 +113,6 @@ class AuthNotifier extends StateNotifier<AuthState> {
 
 final authProvider = StateNotifierProvider<AuthNotifier, AuthState>((ref) {
   final authService = ref.watch(authServiceProvider);
-  return AuthNotifier(authService);
+  final dioService = ref.watch(dioServiceProvider);
+  return AuthNotifier(authService, dioService);
 });

@@ -45,15 +45,16 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
+          backgroundColor: Colors.white,
           title: const Text('Konfirmasi Logout'),
           content: const Text('Apakah Anda yakin ingin keluar dari aplikasi?'),
           actions: <Widget>[
             TextButton(
-              child: const Text('Batal'),
+              child: const Text('Batal', style: TextStyle(color: Colors.blue)),
               onPressed: () => Navigator.of(context).pop(),
             ),
             TextButton(
-              child: const Text('Ya, Logout'),
+              child: const Text('Ya, Logout', style: TextStyle(color: Colors.blue)),
               onPressed: () {
                 Navigator.of(context).pop();
                 _logout();
@@ -70,10 +71,10 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
     final authState = ref.watch(authProvider);
     final userData = authState.userData;
 
-    final name = userData != null ? userData['name'] ?? 'User' : 'User';
-    final email = userData != null ? userData['email'] ?? '-' : '-';
-    final role = userData != null ? userData['role'] ?? '-' : '-';
-    final phone = userData != null ? userData['phone'] ?? '-' : '-';
+    final name = userData != null ? userData.username : 'User';
+    final email = userData != null ? userData.email : '-';
+    final role = userData != null ? userData.role : '-';
+    final phone = userData != null ? userData.phone : '-';
 
     return Scaffold(
       backgroundColor: Colors.white,
@@ -137,12 +138,12 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
                   _buildProfileItem(
                     icon: Icons.email,
                     title: 'Email',
-                    value: email,
+                    value: email ?? "-",
                   ),
                   _buildProfileItem(
                     icon: Icons.phone,
                     title: 'Telepon',
-                    value: phone,
+                    value: phone ?? "-",
                   ),
                   const SizedBox(height: 32),
                   SizedBox(
@@ -151,7 +152,7 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
                     child: ElevatedButton(
                       onPressed: _isLoggingOut ? null : _confirmLogout,
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.red,
+                        backgroundColor: const Color.fromARGB(99, 148, 152, 163),
                         foregroundColor: Colors.white,
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(8),

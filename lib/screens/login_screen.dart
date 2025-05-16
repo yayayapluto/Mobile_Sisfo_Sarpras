@@ -121,12 +121,14 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                             borderRadius:
                                 const BorderRadius.all(Radius.circular(8)),
                             borderSide: BorderSide(
+                                // ignore: deprecated_member_use
                                 color: Colors.black.withOpacity(0.3)),
                           ),
                           enabledBorder: OutlineInputBorder(
                             borderRadius:
                                 const BorderRadius.all(Radius.circular(8)),
                             borderSide: BorderSide(
+                                // ignore: deprecated_member_use
                                 color: Colors.black.withOpacity(0.3)),
                           ),
                           focusedBorder: const OutlineInputBorder(
@@ -149,12 +151,14 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                             borderRadius:
                                 const BorderRadius.all(Radius.circular(8)),
                             borderSide: BorderSide(
+                                // ignore: deprecated_member_use
                                 color: Colors.black.withOpacity(0.3)),
                           ),
                           enabledBorder: OutlineInputBorder(
                             borderRadius:
                                 const BorderRadius.all(Radius.circular(8)),
                             borderSide: BorderSide(
+                                // ignore: deprecated_member_use
                                 color: Colors.black.withOpacity(0.3)),
                           ),
                           focusedBorder: const OutlineInputBorder(

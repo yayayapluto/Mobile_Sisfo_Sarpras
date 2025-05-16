@@ -21,7 +21,6 @@ class AuthService {
         _dioService.setToken(response['content']['token']);
       }
 
-      
       return response;
     } catch (e) {
       return {

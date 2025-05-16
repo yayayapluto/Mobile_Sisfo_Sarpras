@@ -10,31 +10,35 @@ class ApiException implements Exception {
 }
 
 class TimeoutException extends ApiException {
-  TimeoutException(String message) : super(message);
+  TimeoutException(super.message);
 }
 
 class BadRequestException extends ApiException {
-  BadRequestException(String message) : super(message);
+  BadRequestException(super.message);
 }
 
 class UnauthorizedException extends ApiException {
-  UnauthorizedException(String message) : super(message);
+  UnauthorizedException(super.message);
 }
 
 class ForbiddenException extends ApiException {
-  ForbiddenException(String message) : super(message);
+  ForbiddenException(super.message);
 }
 
 class NotFoundException extends ApiException {
-  NotFoundException(String message) : super(message);
+  NotFoundException(super.message);
 }
 
 class ServerException extends ApiException {
-  ServerException(String message) : super(message);
+  ServerException(super.message);
 }
 
 class RequestCancelledException extends ApiException {
-  RequestCancelledException(String message) : super(message);
+  RequestCancelledException(super.message);
+}
+
+class ValidationException extends ApiException {
+  ValidationException(super.message);
 }
 
 class DioService {
@@ -44,18 +48,12 @@ class DioService {
     _dio = Dio(
       BaseOptions(
         baseUrl: apiBaseUrl,
-        connectTimeout: Duration(seconds: apiTimeoutSeconds),
-        receiveTimeout: Duration(seconds: apiTimeoutSeconds),
+        connectTimeout: const Duration(seconds: apiTimeoutSeconds),
+        receiveTimeout: const Duration(seconds: apiTimeoutSeconds),
         responseType: ResponseType.json,
         headers: apiDefaultHeaders,
       ),
     );
-    
-    _dio.interceptors.add(LogInterceptor(
-      requestBody: true,
-      responseBody: true,
-      error: true,
-    ));
   }
 
   void setToken(String token) {
@@ -166,10 +164,25 @@ class DioService {
         final statusCode = error.response?.statusCode;
         final responseData = error.response?.data;
         
-        
         String message = 'Unknown error occurred';
         if (responseData != null && responseData is Map<String, dynamic>) {
-          message = responseData['message'] ?? message;
+          // Check for validation errors structure
+          if (responseData['errors'] != null) {
+            final errors = responseData['errors'];
+            if (errors is Map<String, dynamic>) {
+              // Convert validation errors to readable format
+              message = errors.entries
+                  .map((e) => '${e.key}: ${(e.value as List).join(', ')}')
+                  .join('\n');
+            } else if (errors is List) {
+              message = errors.join('\n');
+            } else {
+              message = errors.toString();
+            }
+            // print('DEBUG - Validation Errors: $errors'); // Debug log
+          } else {
+            message = responseData['message'] ?? message;
+          }
         }
         
         switch (statusCode) {
@@ -181,6 +194,8 @@ class DioService {
             return ForbiddenException(message);
           case 404:
             return NotFoundException(message);
+          case 422:
+            return ValidationException(message);
           case 500:
           case 501:
           case 502:

@@ -7,6 +7,9 @@ import '../screens/category/category_list_screen.dart';
 import '../screens/item/item_list_screen.dart';
 import '../screens/item/item_detail_screen.dart';
 import '../screens/request/request_history_screen.dart';
+import '../screens/request/borrow_request_screen.dart';
+import '../screens/request/return_request_screen.dart';
+import '../screens/request/active_borrows_screen.dart';
 import '../screens/profile/profile_screen.dart';
 
 final router = GoRouter(
@@ -73,6 +76,24 @@ final router = GoRouter(
           },
         ),
       ],
+    ),
+    GoRoute(
+      path: '/borrow-request',
+      name: 'borrow-request',
+      builder: (context, state) => const BorrowRequestScreen(),
+    ),
+    GoRoute(
+      path: '/active-borrows',
+      name: 'active-borrows',
+      builder: (context, state) => const ActiveBorrowsScreen(),
+    ),
+    GoRoute(
+      path: '/return-request/:id',
+      name: 'return-request',
+      builder: (context, state) {
+        final borrowId = int.parse(state.pathParameters['id']!);
+        return ReturnRequestScreen(borrowRequestId: borrowId);
+      },
     ),
     GoRoute(
       path: '/history',
